@@ -21,7 +21,6 @@ const menorAMayor = () => {
 function reservarHabitacion(){
     let habitacion = '';
     let cantidad = 0;
-    let precio = 0;
     let total = 0;
     let seguirComprando = true;
 

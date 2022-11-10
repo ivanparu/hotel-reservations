@@ -1,45 +1,51 @@
 
+const arrayHabitaciones = [];
+
+const habitacion1 = new Habitacion (1, 'suite', 2000);
+const habitacion2 = new Habitacion (2, 'ejecutiva', 1000);
+const habitacion3 = new Habitacion (3, 'deluxe', 5000);
+
+arrayHabitaciones.push(habitacion1, habitacion2, habitacion3);
+
+const mostarOrdenado = () => {
+    let array = [];
+    arrayHabitaciones.forEach(habitacion => array.push(habitacion.nombre+ ' $' +habitacion.precio));
+    alert('Lista de precios:'+ '\n'+array.join('\n'));
+}
+
+const menorAMayor = () => {
+    arrayHabitaciones.sort((a,b) => a.precio - b.precio);
+    mostarOrdenado();
+};
+
 function reservarHabitacion(){
     let habitacion = '';
     let cantidad = 0;
     let precio = 0;
-    let totalCompra = 0;
-    let cantidadTotal = 0;
-    let seguirComprando = 0;
+    let total = 0;
+    let seguirComprando = true;
 
 
     do{
         habitacion = parseInt(prompt('Que habitación queres?\n 1:suite 2:ejecutiva 3:deluxe', 'Ej: 1'));
-        cantidad = parseInt(prompt('Cuantas días?'));
 
-        let cantidadValidada = validarCantidad(cantidad)
-
-        switch (habitacion) {
-            case 1:
-                precio = 2000;
-                break;
-            case 2:
-                precio = 1000;
-                break;
-            case 3:
-                precio = 5000;
-                break;    
-            default:
-                alert('Datos mal ingresados');
-                precio = 0;
-                cantidad = 0;
-                break;
+        const habitacionSeleccionada = arrayHabitaciones.find(buscarHabitacion => buscarHabitacion.id === habitacion)
+        
+        if(!habitacionSeleccionada){
+            alert('La habitacion no se encuentra disponible.');
+            continue;
         }
-
-        cantidadTotal += cantidadValidada
-        totalCompra += cantidadTotal * precio
-
-        alert('Lo que te sale es $' + totalCompra)
-
+        cantidad = parseInt(prompt('Cuantas días?'));
+        
+        let cantidadValidada = validarCantidad(cantidad);
+        
+        total += habitacionSeleccionada.precio * cantidadValidada;
+        alert('Lo que te sale es $' + total);
+        
         seguirComprando = confirm('Queres seguir comprando?')
 
 } while(seguirComprando)
-return totalCompra;
+return total;
 }
 
 
@@ -53,13 +59,17 @@ function validarCantidad(cantidad){
     } return cantidad;
 }
 
-function descuento(totalCompra){
+function descuento (total){
     let lugarDeResidencia = prompt('Sos de Buenos Aires?', 'Si o no').toLocaleLowerCase();
     if(lugarDeResidencia === 'si'){
-        alert('Entonces te hacemos un descuento del 15%, por lo tanto el total es de: $' + (totalCompra * 0.85) );
+        alert('Entonces te hacemos un descuento del 15%, por lo tanto el total es de: $' +  total * 0.85) ;
+    } else if (lugarDeResidencia === 'no'){
+        alert('Como no sos de Buenos Aires no te hacemos descuento por residencia, por lo tanto el total es de: $' + total)
     } else{
-        alert('Como no sos de Buenos Aires no te hacemos descuento por residencia, por lo tanto el total es de: $' + totalCompra)
-    } return totalCompra;
+        alert('Tenes que poner si o no');
+        descuento(total);
+    }
 }
 
+menorAMayor()
 descuento(reservarHabitacion());

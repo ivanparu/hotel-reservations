@@ -1,0 +1,44 @@
+[
+    {
+        "id" : 1,
+        "nombre" : "Ejecutiva",
+        "precio" : 2000,
+        "img" : "./public/img/habitacion_ejecutiva.png",
+        "desc" : "Esta "
+    },
+    {
+        "id" : 2,
+        "nombre" : "Especial",
+        "precio" : 3000,
+        "img" : "./public/img/habitacion_especial.png",
+        "desc" : "Una habitación para estar muy cómodo"
+    },
+    {
+        "id" : 3,
+        "nombre" : "Relax",
+        "precio" : 4000,
+        "img" : "./public/img/habitacion_relax.png",
+        "desc" : "La mejor habitación del mundo mundial"
+    },
+    {
+        "id" : 4,
+        "nombre" : "Imperial",
+        "precio" : 5000,
+        "img" : "./public/img/habitacion_imperial.png",
+        "desc" : "La mejor habitación del mundo mundial"
+    },
+    {
+        "id" : 5,
+        "nombre" : "Suite",
+        "precio" : 6000,
+        "img" : "./public/img/habitacion_suite.png",
+        "desc" : "La mejor habitación del mundo mundial"
+    },
+    {
+        "id" : 6,
+        "nombre" : "Deluxe",
+        "precio" : 7000,
+        "img" : "./public/img/habitacion_deluxe.png",
+        "desc" : "La mejor habitación del mundo mundial"
+    }
+]

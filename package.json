@@ -1,0 +1,19 @@
+{
+  "name": "primera_emtreja_js",
+  "version": "1.0.0",
+  "description": "Proyecto ecommerce",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ivanparu/primera_emtreja_js.git"
+  },
+  "author": "Ivan Parunov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ivanparu/primera_emtreja_js/issues"
+  },
+  "homepage": "https://github.com/ivanparu/primera_emtreja_js#readme"
+}

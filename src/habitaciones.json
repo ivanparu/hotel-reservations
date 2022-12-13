@@ -4,35 +4,35 @@
         "nombre" : "Ejecutiva",
         "precio" : 2000,
         "img" : "./public/img/habitacion_ejecutiva.png",
-        "desc" : "Esta "
+        "desc" : "Esta es la habitación más barata y cómoda que vas a encontrar"
     },
     {
         "id" : 2,
         "nombre" : "Especial",
         "precio" : 3000,
         "img" : "./public/img/habitacion_especial.png",
-        "desc" : "Una habitación para estar muy cómodo"
+        "desc" : "Barata, pero a la vez, una de las más lindas"
     },
     {
         "id" : 3,
         "nombre" : "Relax",
         "precio" : 4000,
         "img" : "./public/img/habitacion_relax.png",
-        "desc" : "La mejor habitación del mundo mundial"
+        "desc" : "Si queres olvidarte de tus problemas, esta es la índicada"
     },
     {
         "id" : 4,
         "nombre" : "Imperial",
         "precio" : 5000,
         "img" : "./public/img/habitacion_imperial.png",
-        "desc" : "La mejor habitación del mundo mundial"
+        "desc" : "Más cara, pero vas a pasar una noche inolvidable"
     },
     {
         "id" : 5,
         "nombre" : "Suite",
         "precio" : 6000,
         "img" : "./public/img/habitacion_suite.png",
-        "desc" : "La mejor habitación del mundo mundial"
+        "desc" : "Diseñada para que te sientas como un rey"
     },
     {
         "id" : 6,

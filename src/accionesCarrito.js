@@ -1,4 +1,5 @@
 import {guardarCarritoStorage} from "./storage.js"
+import {obtenerCarritoStorage} from "./storage.js"
 
 let carrito = [];
 
@@ -11,17 +12,21 @@ const agregarAlCarrito = (habitacionId) => {
         }).showToast();
 
     } else {
-        const habitacion = habitaciones.find( habitacion => habitacion.id === habitacionId );
-        carrito.push(habitacion)
-        Toastify({
-            text: `Se agregó el ${habitacion.nombre} al carrito`,
-            duration: 2000,
-            position: "center"
-        }).showToast();
-    
-        actualizarTotal(carrito)
-        mostarCarrito(carrito)
-        guardarCarritoStorage();
+        fetch(`/src/habitaciones.json`)
+        .then((response) => response.json())
+        .then((habitaciones) => {
+            const habitacion = habitaciones.find( habitacion => habitacion.id === habitacionId );
+            carrito.push(habitacion)
+            Toastify({
+                text: `Se agregó el ${habitacion.nombre} al carrito`,
+                duration: 2000,
+                position: "center"
+            }).showToast();
+        
+            actualizarTotal(carrito)
+            mostarCarrito(carrito)
+            guardarCarritoStorage(carrito);
+        })
     }
 }
 
@@ -35,7 +40,7 @@ const eliminarHabitacionCarrito = (habitacionId) => {
 
     carrito = carritoActualizado
     mostarCarrito(carritoActualizado);
-    guardarCarritoStorage();
+    guardarCarritoStorage(carrito);
 };
 
 const mostarCarrito = (habitaciones) => {

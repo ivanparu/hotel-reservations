@@ -4,7 +4,7 @@ import {actualizarTotal} from "./accionesCarrito.js";
 
 
 if (localStorage.getItem("carrito")) {
-    carrito = obtenerCarritoStorage();
+    window.carrito = obtenerCarritoStorage();
 };
-mostarCarrito(carrito);
-actualizarTotal(carrito);
+mostarCarrito(window.carrito);
+actualizarTotal(window.carrito);

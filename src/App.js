@@ -9,11 +9,12 @@ const mostrarHabitaciones = (habitaciones) => {
     const div = document.createElement('div');
     div.style = `width : 18rem`;
     div.classList.add('card');
-            div.innerHTML += `
-                                    <img src="${habitacion.img}" class="card-img-top">
+            div.innerHTML += `  
+                                <img src="${habitacion.img}" class="card-img-top">
                                 <div class="card-body">
                                     <h5 class="card-title">${habitacion.nombre}</h5>
                                     <p class="card-text">${habitacion.desc}</p>
+                                    <p class="card-text">$  ${habitacion.precio}</p>
                                     <a href="#" class="btn btn-primary" id="boton${habitacion.id}">Comprar</a>
                                 </div>
                     `

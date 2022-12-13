@@ -1,4 +1,4 @@
-const guardarCarritoStorage = () => {
+const guardarCarritoStorage = (carrito) => {
     localStorage.setItem("carrito", JSON.stringify(carrito));
 };
 
